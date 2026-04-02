@@ -49,11 +49,11 @@ const AmenitiesSection = ({ language }) => {
             return (
               <div
                 key={index}
-                className="group bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="group bg-white rounded-xl p-8 transition-all duration-500 hover:-translate-y-2 card-premium rounded-premium"
               >
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl flex items-center justify-center group-hover:from-teal-200 group-hover:to-teal-100 transition-colors">
-                    <IconComponent className="h-10 w-10 text-teal-700" />
+                  <div className="w-20 h-20 bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl flex items-center justify-center group-hover:from-teal-200 group-hover:to-teal-100 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <IconComponent className="h-10 w-10 text-teal-700 transition-transform duration-300" />
                   </div>
                   <p className="font-semibold text-slate-900 text-base leading-tight">
                     {amenity.name[language]}

@@ -33,7 +33,7 @@ const BookingWidget = ({ language }) => {
   };
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto">
+    <div className="bg-white/95 backdrop-blur-premium rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto card-premium">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
         {/* Check-in */}
         <div className="space-y-3">
@@ -46,7 +46,7 @@ const BookingWidget = ({ language }) => {
             value={checkIn}
             onChange={(e) => setCheckIn(e.target.value)}
             min={today}
-            className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-lg focus:border-teal-500 focus:outline-none transition-colors text-base"
+            className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-lg focus:border-teal-500 focus:outline-none transition-all text-base hover:border-slate-300"
           />
         </div>
 
@@ -61,14 +61,14 @@ const BookingWidget = ({ language }) => {
             value={checkOut}
             onChange={(e) => setCheckOut(e.target.value)}
             min={checkIn || today}
-            className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-lg focus:border-teal-500 focus:outline-none transition-colors text-base"
+            className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-lg focus:border-teal-500 focus:outline-none transition-all text-base hover:border-slate-300"
           />
         </div>
 
         {/* Book Button */}
         <Button
           onClick={handleBooking}
-          className="w-full bg-red-600 hover:bg-red-700 text-white py-7 text-lg font-semibold shadow-lg hover:shadow-xl transition-all rounded-lg"
+          className="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white py-7 text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 rounded-lg hover:-translate-y-1 active:translate-y-0"
         >
           {language === 'en' ? 'Check Availability' : 'ലഭ്യത പരിശോധിക്കുക'}
         </Button>

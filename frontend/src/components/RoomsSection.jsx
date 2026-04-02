@@ -14,19 +14,19 @@ const RoomCard = ({ room, language }) => {
 
   return (
     <>
-      <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 border-0 h-full flex flex-col">
-        <div className="relative overflow-hidden">
+      <Card className="group overflow-hidden transition-all duration-500 border-0 h-full flex flex-col card-premium rounded-premium-lg">
+        <div className="relative overflow-hidden image-hover-zoom">
           <img
             src={room.image}
             alt={room.name[language]}
-            className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-72 object-cover transition-transform duration-700 ease-out"
           />
-          <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg">
+          <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg animate-fade-in">
             {Math.round(((room.originalPrice - room.pricePerNight) / room.originalPrice) * 100)}% OFF
           </div>
         </div>
 
-        <CardContent className="p-6 space-y-5 flex-1 flex flex-col">
+        <CardContent className="p-6 space-y-5 flex-1 flex flex-col bg-white">
           <div className="space-y-2">
             <h3 className="text-2xl font-bold text-slate-900 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
               {room.name[language]}
@@ -42,7 +42,7 @@ const RoomCard = ({ room, language }) => {
             {room.amenities[language].slice(0, 4).map((amenity, index) => (
               <span
                 key={index}
-                className="text-xs bg-teal-50 text-teal-700 px-3 py-1.5 rounded-full border border-teal-200 font-medium"
+                className="text-xs bg-teal-50 text-teal-700 px-3 py-1.5 rounded-full border border-teal-200 font-medium transition-all hover:bg-teal-100 hover:shadow-sm"
               >
                 {amenity}
               </span>
@@ -55,7 +55,7 @@ const RoomCard = ({ room, language }) => {
           </div>
 
           {/* Pricing */}
-          <div className="pt-4 border-t border-slate-200 mt-auto">
+          <div className="pt-4 border-t border-slate-100 mt-auto">
             <div className="flex items-end gap-3 mb-3">
               <div className="flex items-start">
                 <IndianRupee className="h-6 w-6 text-slate-900 mt-0.5" />
@@ -72,7 +72,7 @@ const RoomCard = ({ room, language }) => {
 
             <Button
               onClick={handleBookRoom}
-              className="w-full bg-teal-600 hover:bg-teal-700 text-white py-6 text-base font-semibold transition-all rounded-lg shadow-md hover:shadow-lg"
+              className="w-full bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white py-6 text-base font-semibold transition-all duration-300 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
             >
               {language === 'en' ? 'Book This Room' : 'ഈ മുറി ബുക്ക് ചെയ്യുക'}
             </Button>

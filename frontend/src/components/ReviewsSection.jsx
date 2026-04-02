@@ -75,10 +75,10 @@ const ReviewsSection = ({ language }) => {
             {/* Review Cards */}
             <div className="lg:col-span-2 space-y-6">
               {reviews.map((review) => (
-                <Card key={review.id} className="border-0 shadow-md hover:shadow-lg transition-all">
-                  <CardContent className="p-8">
+                <Card key={review.id} className="border-0 transition-all duration-500 hover:-translate-y-1 card-premium rounded-premium-lg">
+                  <CardContent className="p-8 bg-white">
                     <div className="flex items-start gap-5">
-                      <Avatar className="w-14 h-14 bg-gradient-to-br from-teal-400 to-teal-600 text-white flex-shrink-0">
+                      <Avatar className="w-14 h-14 bg-gradient-to-br from-teal-400 to-teal-600 text-white flex-shrink-0 shadow-md">
                         <AvatarFallback className="bg-transparent text-white font-bold text-lg">
                           {review.avatar}
                         </AvatarFallback>
@@ -94,7 +94,7 @@ const ReviewsSection = ({ language }) => {
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
-                                className={`h-5 w-5 ${
+                                className={`h-5 w-5 transition-all duration-300 ${
                                   i < review.rating
                                     ? 'fill-amber-400 text-amber-400'
                                     : 'fill-slate-200 text-slate-200'
@@ -105,7 +105,7 @@ const ReviewsSection = ({ language }) => {
                         </div>
 
                         <div className="relative">
-                          <Quote className="absolute -top-2 -left-2 h-10 w-10 text-teal-100" />
+                          <Quote className="absolute -top-2 -left-2 h-10 w-10 text-teal-100 opacity-60" />
                           <p className="text-slate-700 leading-relaxed pl-8 text-base">{review.comment[language]}</p>
                         </div>
                       </div>

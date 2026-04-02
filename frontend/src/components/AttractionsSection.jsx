@@ -49,23 +49,23 @@ const AttractionsSection = ({ language }) => {
             return (
               <Card
                 key={attraction.id}
-                className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0"
+                className="group overflow-hidden transition-all duration-500 hover:-translate-y-1 border-0 card-premium rounded-premium-lg"
               >
-                <div className="relative overflow-hidden h-56">
+                <div className="relative overflow-hidden h-56 image-hover-zoom">
                   <img
                     src={attraction.image}
                     alt={attraction.name[language]}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                   <div className="absolute bottom-5 left-5 right-5">
-                    <h3 className="text-xl font-bold text-white mb-1 leading-tight">
+                    <h3 className="text-xl font-bold text-white mb-1 leading-tight text-shadow-strong">
                       {attraction.name[language]}
                     </h3>
                   </div>
                 </div>
 
-                <CardContent className="p-6 space-y-4">
+                <CardContent className="p-6 space-y-4 bg-white">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-slate-700">
                       <MapPin className="h-5 w-5 text-teal-600" />
@@ -78,7 +78,7 @@ const AttractionsSection = ({ language }) => {
                   </div>
 
                   <div className="flex items-center gap-2 pt-2">
-                    <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:bg-teal-200 group-hover:scale-110">
                       <IconComponent className="h-5 w-5 text-teal-700" />
                     </div>
                     <span className="text-sm text-slate-600 font-medium">

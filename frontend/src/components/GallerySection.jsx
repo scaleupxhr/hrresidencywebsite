@@ -31,7 +31,7 @@ const GallerySection = ({ language }) => {
             {galleryImages.map((image, index) => (
               <div
                 key={image.id}
-                className={`relative overflow-hidden rounded-xl cursor-pointer group shadow-md hover:shadow-xl transition-all ${
+                className={`relative overflow-hidden rounded-xl cursor-pointer group shadow-md hover:shadow-2xl transition-all duration-500 image-hover-zoom ${
                   index === 0 ? 'md:col-span-2 md:row-span-2' : ''
                 }`}
                 onClick={() => setSelectedImage(image)}
@@ -39,12 +39,12 @@ const GallerySection = ({ language }) => {
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
+                  className={`w-full object-cover transition-all duration-700 ease-out ${
                     index === 0 ? 'h-full min-h-[400px]' : 'h-72'
                   }`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white font-semibold text-lg">{image.alt}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                  <p className="text-white font-semibold text-lg text-shadow-strong transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{image.alt}</p>
                 </div>
               </div>
             ))}
