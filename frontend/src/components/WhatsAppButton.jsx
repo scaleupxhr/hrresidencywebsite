@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { hotelInfo } from '../data/mockData';
 
 const WhatsAppButton = ({ language }) => {
@@ -24,13 +24,13 @@ const WhatsAppButton = ({ language }) => {
   return (
     <button
       onClick={handleClick}
-      className={`fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-all duration-300 group ${
+      className={`fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-5 shadow-2xl transition-all duration-300 group ${
         isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
       }`}
       aria-label="Contact on WhatsApp"
     >
-      <MessageCircle className="h-7 w-7 group-hover:scale-110 transition-transform" />
-      <span className="absolute bottom-full right-0 mb-2 bg-slate-900 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+      <MessageCircle className="h-8 w-8 group-hover:scale-110 transition-transform" />
+      <span className="absolute bottom-full right-0 mb-3 bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
         {language === 'en' ? 'Chat on WhatsApp' : 'വാട്സ്ആപ്പിൽ ചാറ്റ് ചെയ്യുക'}
       </span>
     </button>

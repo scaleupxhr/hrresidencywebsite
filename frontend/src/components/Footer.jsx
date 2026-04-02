@@ -8,22 +8,22 @@ const Footer = ({ language }) => {
   return (
     <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white">
       {/* Booking Platforms Bar */}
-      <div className="bg-red-600 py-6">
+      <div className="bg-red-600 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className="text-lg font-bold">
+              <p className="text-xl font-bold mb-1">
                 {language === 'en' ? 'Book directly and save!' : 'നേരിട്ട് ബുക്ക് ചെയ്ത് സംരക്ഷിക്കുക!'}
               </p>
-              <p className="text-sm text-red-50">
+              <p className="text-base text-red-50 font-medium">
                 {language === 'en'
                   ? `Starting from ₹${bookingPlatforms[0].price.toLocaleString('en-IN')}/night`
                   : `₹${bookingPlatforms[0].price.toLocaleString('en-IN')}/രാത്രി മുതൽ ആരംഭിക്കുന്നു`}
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-sm text-red-50">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <span className="text-base text-red-50 font-semibold">
                 {language === 'en' ? 'Also available on:' : 'ഇതിലും ലഭ്യമാണ്:'}
               </span>
               {bookingPlatforms.map((platform) => (
@@ -32,10 +32,10 @@ const Footer = ({ language }) => {
                   href={platform.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-lg text-base font-semibold flex items-center gap-2 transition-all shadow-md hover:shadow-lg"
                 >
                   {platform.name}
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLink className="h-4 w-4" />
                 </a>
               ))}
             </div>
@@ -44,17 +44,17 @@ const Footer = ({ language }) => {
       </div>
 
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* Hotel Info */}
           <div>
             <h3
-              className="text-2xl font-bold mb-4"
+              className="text-3xl font-bold mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               HR <span className="text-red-500">RESIDENCY</span>
             </h3>
-            <p className="text-slate-400 mb-4 leading-relaxed">
+            <p className="text-slate-400 mb-6 leading-relaxed text-base">
               {language === 'en'
                 ? 'Your peaceful retreat in the heart of Kozhikode. Experience comfort, affordability, and warm hospitality.'
                 : 'കോഴിക്കോട്ടിന്റെ ഹൃദയഭാഗത്തുള്ള നിങ്ങളുടെ സമാധാനപൂർണ്ണമായ വിശ്രമം. സുഖവും താങ്ങാനാവുന്ന നിരക്കും ഊഷ്മള ആതിഥ്യമര്യാദയും അനുഭവിക്കൂ.'}
@@ -63,10 +63,10 @@ const Footer = ({ language }) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">
+            <h4 className="text-xl font-bold mb-6">
               {language === 'en' ? 'Quick Links' : 'ദ്രുത ലിങ്കുകൾ'}
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { label: language === 'en' ? 'Rooms' : 'മുറികൾ', id: 'rooms' },
                 { label: language === 'en' ? 'Amenities' : 'സൗകര്യങ്ങൾ', id: 'amenities' },
@@ -82,7 +82,7 @@ const Footer = ({ language }) => {
                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }
                     }}
-                    className="text-slate-400 hover:text-teal-400 transition-colors"
+                    className="text-slate-400 hover:text-teal-400 transition-colors text-base font-medium"
                   >
                     {link.label}
                   </button>
@@ -93,32 +93,32 @@ const Footer = ({ language }) => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-bold mb-4">
+            <h4 className="text-xl font-bold mb-6">
               {language === 'en' ? 'Contact Us' : 'ഞങ്ങളെ ബന്ധപ്പെടുക'}
             </h4>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <a
                 href={`tel:${hotelInfo.phone}`}
                 className="flex items-start gap-3 text-slate-400 hover:text-teal-400 transition-colors"
               >
                 <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span>{hotelInfo.phone}</span>
+                <span className="text-base font-medium">{hotelInfo.phone}</span>
               </a>
               <div className="flex items-start gap-3 text-slate-400">
                 <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span>{hotelInfo.email}</span>
+                <span className="text-base">{hotelInfo.email}</span>
               </div>
               <div className="flex items-start gap-3 text-slate-400">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">{hotelInfo.address[language]}</span>
+                <span className="text-base leading-relaxed">{hotelInfo.address[language]}</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-500">
-          <p>
+        <div className="border-t border-slate-800 mt-16 pt-10 text-center text-slate-500">
+          <p className="text-base">
             © {currentYear} HR Residency.{' '}
             {language === 'en' ? 'All rights reserved.' : 'എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം.'}
           </p>

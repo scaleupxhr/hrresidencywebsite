@@ -6,37 +6,37 @@ import { Avatar, AvatarFallback } from './ui/avatar';
 
 const ReviewsSection = ({ language }) => {
   return (
-    <section id="reviews" className="py-20 bg-white">
+    <section id="reviews" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             {language === 'en' ? 'Guest Reviews' : 'അതിഥി അവലോകനങ്ങൾ'}
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {language === 'en'
-              ? 'What our guests say about their experience'
-              : 'അതിഥികൾ അവരുടെ അനുഭവത്തെക്കുറിച്ച് പറയുന്നത്'}
+              ? 'Read what our guests say about their wonderful experience'
+              : 'അതിഥികൾ അവരുടെ അത്ഭുതകരമായ അനുഭവത്തെക്കുറിച്ച് പറയുന്നത് വായിക്കുക'}
           </p>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-teal-600 mx-auto mt-6"></div>
         </div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-10">
             {/* Overall Rating Card */}
             <div className="lg:col-span-1">
-              <Card className="bg-gradient-to-br from-teal-600 to-teal-700 text-white border-0 h-full">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <div className="text-6xl font-bold mb-2">{hotelInfo.rating}</div>
-                    <div className="flex items-center justify-center gap-1 mb-2">
+              <Card className="bg-gradient-to-br from-teal-600 to-teal-700 text-white border-0 h-full shadow-xl">
+                <CardContent className="p-10">
+                  <div className="text-center mb-8">
+                    <div className="text-7xl font-bold mb-3">{hotelInfo.rating}</div>
+                    <div className="flex items-center justify-center gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`h-5 w-5 ${
+                          className={`h-6 w-6 ${
                             i < Math.floor(hotelInfo.rating)
                               ? 'fill-amber-400 text-amber-400'
                               : 'fill-white/30 text-white/30'
@@ -44,21 +44,21 @@ const ReviewsSection = ({ language }) => {
                         />
                       ))}
                     </div>
-                    <p className="text-white/90">
+                    <p className="text-white/90 text-base font-medium">
                       {language === 'en' ? 'Based on' : 'അടിസ്ഥാനമാക്കി'} {hotelInfo.totalReviews}{' '}
                       {language === 'en' ? 'reviews' : 'അവലോകനങ്ങൾ'}
                     </p>
                   </div>
 
                   {/* Rating Distribution */}
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {ratingDistribution.map((rating) => (
                       <div key={rating.stars} className="flex items-center gap-3">
-                        <div className="flex items-center gap-1 w-16">
+                        <div className="flex items-center gap-1 w-20">
                           <span className="text-sm font-semibold">{rating.stars}</span>
-                          <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+                          <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                         </div>
-                        <div className="flex-1 h-2 bg-white/20 rounded-full overflow-hidden">
+                        <div className="flex-1 h-3 bg-white/20 rounded-full overflow-hidden">
                           <div
                             className="h-full bg-amber-400 rounded-full transition-all duration-500"
                             style={{ width: `${rating.percentage}%` }}
@@ -75,26 +75,26 @@ const ReviewsSection = ({ language }) => {
             {/* Review Cards */}
             <div className="lg:col-span-2 space-y-6">
               {reviews.map((review) => (
-                <Card key={review.id} className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <Avatar className="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-600 text-white">
-                        <AvatarFallback className="bg-transparent text-white font-bold">
+                <Card key={review.id} className="border-0 shadow-md hover:shadow-lg transition-all">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-5">
+                      <Avatar className="w-14 h-14 bg-gradient-to-br from-teal-400 to-teal-600 text-white flex-shrink-0">
+                        <AvatarFallback className="bg-transparent text-white font-bold text-lg">
                           {review.avatar}
                         </AvatarFallback>
                       </Avatar>
 
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
+                      <div className="flex-1 space-y-3">
+                        <div className="flex items-center justify-between">
                           <div>
-                            <h4 className="font-bold text-slate-900">{review.name}</h4>
+                            <h4 className="font-bold text-slate-900 text-lg">{review.name}</h4>
                             <p className="text-sm text-slate-500">{review.date}</p>
                           </div>
                           <div className="flex items-center gap-1">
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
-                                className={`h-4 w-4 ${
+                                className={`h-5 w-5 ${
                                   i < review.rating
                                     ? 'fill-amber-400 text-amber-400'
                                     : 'fill-slate-200 text-slate-200'
@@ -105,8 +105,8 @@ const ReviewsSection = ({ language }) => {
                         </div>
 
                         <div className="relative">
-                          <Quote className="absolute -top-1 -left-1 h-8 w-8 text-teal-100" />
-                          <p className="text-slate-700 leading-relaxed pl-6">{review.comment[language]}</p>
+                          <Quote className="absolute -top-2 -left-2 h-10 w-10 text-teal-100" />
+                          <p className="text-slate-700 leading-relaxed pl-8 text-base">{review.comment[language]}</p>
                         </div>
                       </div>
                     </div>
@@ -114,12 +114,12 @@ const ReviewsSection = ({ language }) => {
                 </Card>
               ))}
 
-              <div className="text-center pt-4">
+              <div className="text-center pt-6">
                 <a
                   href={`https://www.google.com/search?q=HR+Residency+Kozhikode+reviews`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-teal-600 hover:text-teal-700 font-semibold inline-flex items-center gap-2 transition-colors"
+                  className="text-teal-600 hover:text-teal-700 font-semibold inline-flex items-center gap-2 transition-colors text-base"
                 >
                   {language === 'en' ? 'Read all reviews on Google' : 'ഗൂഗിളിൽ എല്ലാ അവലോകനങ്ങളും വായിക്കുക'}
                   <span>→</span>

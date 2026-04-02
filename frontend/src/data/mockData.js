@@ -53,15 +53,15 @@ export const roomTypes = [
   },
   {
     id: 3,
-    name: { en: "Family Room", ml: "ഫാമിലി റൂം" },
-    image: "https://customer-assets.emergentagent.com/job_malabar-stay/artifacts/melsi7ib_2025-02-05%20%285%29.jpg",
-    bedType: { en: "2 Double Beds", ml: "2 ഡബിൾ ബെഡുകൾ" },
+    name: { en: "Single Room", ml: "സിംഗിൾ റൂം" },
+    image: "https://customer-assets.emergentagent.com/job_malabar-stay/artifacts/mkhs515v_hr%20residency%20single%20rom.jpeg",
+    bedType: { en: "Single Bed", ml: "സിംഗിൾ ബെഡ്" },
     amenities: {
-      en: ["Air Conditioning", "Private Bathroom", "Work Desk", "Free Toiletries", "Hot Water", "TV", "Extra Space"],
-      ml: ["എയർ കണ്ടീഷനിംഗ്", "സ്വകാര്യ കുളിമുറി", "വർക്ക് ഡെസ്ക്", "സൗജന്യ ടോയ്‌ലട്രീസ്", "ചൂടുവെള്ളം", "ടിവി", "അധിക ഇടം"]
+      en: ["Ceiling Fan", "Private Bathroom", "Free Toiletries", "Hot Water", "Window View"],
+      ml: ["സീലിംഗ് ഫാൻ", "സ്വകാര്യ കുളിമുറി", "സൗജന്യ ടോയ്‌ലട്രീസ്", "ചൂടുവെള്ളം", "വിൻഡോ വ്യൂ"]
     },
-    pricePerNight: 2299,
-    originalPrice: 2999
+    pricePerNight: 799,
+    originalPrice: 1099
   }
 ];
 
@@ -115,7 +115,7 @@ export const nearbyAttractions = [
     distance: { en: "3 km", ml: "3 കി.മീ" },
     time: { en: "9 mins by car", ml: "കാറിൽ 9 മിനിറ്റ്" },
     icon: "Telescope",
-    image: "https://images.unsplash.com/photo-1726995036039-1ff318dd445c"
+    image: "https://images.unsplash.com/photo-1761465196304-ded5a8b42914?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwyfHxzY2llbmNlJTIwY2VudGVyJTIwcGxhbmV0YXJpdW0lMjBidWlsZGluZyUyMG1vZGVybnxlbnwwfHx8fDE3NzUxMjgyNDN8MA&ixlib=rb-4.1.0&q=85"
   },
   {
     id: 6,
@@ -123,7 +123,7 @@ export const nearbyAttractions = [
     distance: { en: "6.5 km", ml: "6.5 കി.മീ" },
     time: { en: "16 mins by car", ml: "കാറിൽ 16 മിനിറ്റ്" },
     icon: "Trees",
-    image: "https://images.unsplash.com/photo-1726995036039-1ff318dd445c"
+    image: "https://images.pexels.com/photos/17034372/pexels-photo-17034372.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
   {
     id: 7,

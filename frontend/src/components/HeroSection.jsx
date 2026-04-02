@@ -14,7 +14,7 @@ const HeroSection = ({ language }) => {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
       {/* Background Images with Crossfade */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -38,26 +38,26 @@ const HeroSection = ({ language }) => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
           {/* Hotel Name */}
           <h1
-            className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl animate-fade-in"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-2xl animate-fade-in"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             HR <span className="text-red-500">RESIDENCY</span>
           </h1>
 
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-amber-50 mb-8 drop-shadow-lg font-light">
+          <p className="text-xl md:text-2xl lg:text-3xl text-amber-50 mb-10 drop-shadow-lg font-light leading-relaxed">
             {hotelInfo.tagline[language]}
           </p>
 
           {/* Rating Badge */}
           <div className="flex items-center justify-center gap-2 mb-12">
-            <div className="flex items-center gap-1 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
               <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
-              <span className="font-bold text-slate-900">{hotelInfo.rating}</span>
-              <span className="text-slate-600 text-sm ml-1">
+              <span className="font-bold text-slate-900 text-lg">{hotelInfo.rating}</span>
+              <span className="text-slate-600 text-base ml-1">
                 · {hotelInfo.totalReviews} {language === 'en' ? 'Google Reviews' : 'ഗൂഗിൾ അവലോകനങ്ങൾ'}
               </span>
             </div>
@@ -69,7 +69,7 @@ const HeroSection = ({ language }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1 h-3 bg-white/70 rounded-full"></div>
         </div>
