@@ -9,8 +9,8 @@ export const hotelInfo = {
   phone: "088488 89016",
   whatsapp: "918848889016",
   address: {
-    en: "Mini Bypass Rd, Eranhipaalam, Eranhipalam, Kozhikode, Kerala 673006",
-    ml: "മിനി ബൈപാസ് റോഡ്, എരഞ്ഞിപ്പാലം, എരഞ്ഞിപ്പലം, കോഴിക്കോട്, കേരളം 673006"
+    en: "Mini Bypass Rd, Eranhipalam, Kozhikode, Kerala 673006",
+    ml: "മിനി ബൈപാസ് റോഡ്, എരഞ്ഞിപ്പലം, കോഴിക്കോട്, കേരളം 673006"
   },
   email: "info@hrresidency.com",
   checkIn: "2:00 PM",
@@ -22,8 +22,8 @@ export const hotelInfo = {
 };
 
 export const highlights = {
-  en: ["Clean rooms", "Friendly staff", "Affordable rates", "City-center location"],
-  ml: ["ശുദ്ധമായ മുറികൾ", "സൗഹൃദപരമായ സ്റ്റാഫ്", "താങ്ങാനാവുന്ന നിരക്കുകൾ", "നഗര കേന്ദ്ര സ്ഥാനം"]
+  en: ["Clean rooms", "Friendly staff", "Affordable rates", "Prime Location"],
+  ml: ["ശുദ്ധമായ മുറികൾ", "സൗഹൃദപരമായ സ്റ്റാഫ്", "താങ്ങാനാവുന്ന നിരക്കുകൾ", "പ്രധാന സ്ഥാനം"]
 };
 
 export const roomTypes = [

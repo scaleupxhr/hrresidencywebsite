@@ -47,9 +47,9 @@ const HeroSection = ({ language }) => {
             HR <span className="text-red-500">RESIDENCY</span>
           </h1>
 
-          {/* Tagline */}
-          <p className="text-xl md:text-2xl lg:text-3xl text-amber-50 mb-10 drop-shadow-lg font-light leading-relaxed">
-            {hotelInfo.tagline[language]}
+          {/* Tagline with quotation marks and enhanced styling */}
+          <p className="text-xl md:text-2xl lg:text-3xl text-amber-50 mb-10 drop-shadow-lg font-light leading-relaxed" style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
+            "{hotelInfo.tagline[language]}"
           </p>
 
           {/* Rating Badge */}

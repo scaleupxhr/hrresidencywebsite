@@ -31,6 +31,19 @@ const BookingModal = ({ isOpen, onClose, room, language }) => {
     // Check dates
     const checkInDate = new Date(formData.checkIn);
     const checkOutDate = new Date(formData.checkOut);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Validate check-in is not in the past
+    if (checkInDate < today) {
+      toast.error(
+        language === 'en'
+          ? 'Check-in date cannot be in the past'
+          : 'ചെക്ക്-ഇൻ തീയതി ഭൂതകാലത്തിലായിരിക്കരുത്'
+      );
+      return;
+    }
+
     const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
 
     if (nights < 1) {
@@ -104,9 +117,9 @@ Please confirm availability and total price.`
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl w-full p-0 overflow-hidden">
+      <DialogContent className="max-w-2xl w-[95vw] md:w-full p-0 overflow-hidden modal-content">
         {/* Header with Room Image */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-40 md:h-48 overflow-hidden">
           <img
             src={room.image}
             alt={room.name[language]}
@@ -133,12 +146,12 @@ Please confirm availability and total price.`
         </div>
 
         {/* Booking Form */}
-        <div className="p-8">
-          <h3 className="text-2xl font-bold text-slate-900 mb-6">
+        <div className="p-4 md:p-8">
+          <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 md:mb-6">
             {language === 'en' ? 'Complete Your Booking' : 'നിങ്ങളുടെ ബുക്കിംഗ് പൂർത്തിയാക്കുക'}
           </h3>
 
-          <div className="space-y-5">
+          <div className="space-y-4 md:space-y-5">
             {/* Name */}
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-2">

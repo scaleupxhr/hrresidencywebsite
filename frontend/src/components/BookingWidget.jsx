@@ -14,6 +14,15 @@ const BookingWidget = ({ language }) => {
     if (checkIn && checkOut) {
       const checkInDate = new Date(checkIn);
       const checkOutDate = new Date(checkOut);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      // Validate check-in date is not in the past
+      if (checkInDate < today) {
+        toast.error(language === 'en' ? 'Check-in date cannot be in the past' : 'ചെക്ക്-ഇൻ തീയതി ഭൂതകാലത്തിലായിരിക്കരുത്');
+        return;
+      }
+
       const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
 
       if (nights < 1) {
@@ -21,12 +30,18 @@ const BookingWidget = ({ language }) => {
         return;
       }
 
-      toast.success(
-        language === 'en'
-          ? `Booking request for ${nights} night${nights > 1 ? 's' : ''} received! Our team will contact you shortly.`
-          : `${nights} രാത്രിക്കുള്ള ബുക്കിംഗ് അഭ്യർത്ഥന ലഭിച്ചു! ഞങ്ങളുടെ ടീം ഉടൻ നിങ്ങളെ ബന്ധപ്പെടും.`,
-        { duration: 4000 }
-      );
+      // Scroll to rooms section smoothly
+      const roomsSection = document.getElementById('rooms');
+      if (roomsSection) {
+        const offset = 80;
+        const elementPosition = roomsSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     } else {
       toast.error(language === 'en' ? 'Please select check-in and check-out dates' : 'ദയവായി ചെക്ക്-ഇൻ, ചെക്ക്-ഔട്ട് തീയതികൾ തിരഞ്ഞെടുക്കുക');
     }

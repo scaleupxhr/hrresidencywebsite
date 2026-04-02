@@ -37,14 +37,14 @@ const Header = ({ language, setLanguage, onBookNowClick }) => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-8">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-4 md:gap-8">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="group"
             >
               <h1
-                className={`text-2xl font-bold tracking-wider transition-colors ${
+                className={`text-xl md:text-2xl font-bold tracking-wider transition-colors ${
                   isScrolled ? 'text-teal-800' : 'text-white drop-shadow-lg'
                 }`}
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -53,7 +53,7 @@ const Header = ({ language, setLanguage, onBookNowClick }) => {
               </h1>
             </button>
 
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-6">
               {[
                 { label: language === 'en' ? 'Rooms' : 'മുറികൾ', id: 'rooms' },
                 { label: language === 'en' ? 'Amenities' : 'സൗകര്യങ്ങൾ', id: 'amenities' },
@@ -74,8 +74,22 @@ const Header = ({ language, setLanguage, onBookNowClick }) => {
             </nav>
           </div>
 
-          <div className="flex items-center gap-3">
-            <a href={`tel:${hotelInfo.phone}`} className="hidden sm:flex">
+          <div className="flex items-center gap-2 md:gap-3">
+            <a href={`tel:${hotelInfo.phone}`} className="flex md:hidden">
+              <Button
+                variant="outline"
+                size="sm"
+                className={`flex items-center gap-1 transition-all px-2 py-1 min-h-[40px] ${
+                  isScrolled
+                    ? 'border-teal-600 text-teal-700 hover:bg-teal-50'
+                    : 'border-white text-white hover:bg-white/10 backdrop-blur-sm'
+                }`}
+              >
+                <Phone className="h-4 w-4" />
+              </Button>
+            </a>
+
+            <a href={`tel:${hotelInfo.phone}`} className="hidden md:flex">
               <Button
                 variant="outline"
                 size="sm"
@@ -94,9 +108,9 @@ const Header = ({ language, setLanguage, onBookNowClick }) => {
 
             <Button
               onClick={onBookNowClick}
-              className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all"
+              className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all text-sm md:text-base px-3 md:px-4 py-2 min-h-[40px]"
             >
-              {language === 'en' ? 'Book Now' : 'ഇപ്പോൾ ബുക്ക് ചെയ്യുക'}
+              {language === 'en' ? 'Book Now' : 'ബുക്ക് ചെയ്യുക'}
             </Button>
           </div>
         </div>

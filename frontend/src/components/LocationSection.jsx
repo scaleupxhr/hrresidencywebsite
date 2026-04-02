@@ -13,7 +13,7 @@ const LocationSection = ({ language }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    if (formData.name && formData.message) {
       toast.success(
         language === 'en'
           ? 'Message sent successfully! We will get back to you soon.'
@@ -22,7 +22,7 @@ const LocationSection = ({ language }) => {
       );
       setFormData({ name: '', email: '', message: '' });
     } else {
-      toast.error(language === 'en' ? 'Please fill all required fields' : 'ദയവായി എല്ലാ ഫീൽഡുകളും പൂരിപ്പിക്കുക');
+      toast.error(language === 'en' ? 'Please fill all required fields' : 'ദയവായി എല്ലാ ആവശ്യമുള്ള ഫീൽഡുകളും പൂരിപ്പിക്കുക');
     }
   };
 
@@ -39,8 +39,8 @@ const LocationSection = ({ language }) => {
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {language === 'en'
-              ? 'Visit us or get in touch for bookings and inquiries'
-              : 'ബുക്കിംഗുകൾക്കും അന്വേഷണങ്ങൾക്കും ഞങ്ങളെ സന്ദർശിക്കുക അല്ലെങ്കിൽ ബന്ധപ്പെടുക'}
+              ? 'Get in touch with us for personalized service and seamless booking'
+              : 'വ്യക്തിഗത സേവനത്തിനും സുഗമമായ ബുക്കിംഗിനുമായി ഞങ്ങളെ ബന്ധപ്പെടുക'}
           </p>
           <div className="w-24 h-1 bg-teal-600 mx-auto mt-6"></div>
         </div>
@@ -139,14 +139,14 @@ const LocationSection = ({ language }) => {
 
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-3">
-                  {language === 'en' ? 'Email Address *' : 'ഇമെയിൽ വിലാസം *'}
+                  {language === 'en' ? 'Email Address (Optional)' : 'ഇമെയിൽ വിലാസം (ഓപ്ഷണൽ)'}
                 </label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-5 py-4 border-2 border-slate-200 rounded-lg focus:border-teal-500 focus:outline-none transition-colors text-base"
-                  placeholder={language === 'en' ? 'your@email.com' : 'നിങ്ങളുടെ@email.com'}
+                  className="w-full px-5 py-4 border-2 border-slate-200 rounded-lg focus:border-teal-500 focus:outline-none transition-all text-base hover:border-slate-300"
+                  placeholder={language === 'en' ? 'your@email.com (optional)' : 'നിങ്ങളുടെ@email.com (ഓപ്ഷണൽ)'}
                 />
               </div>
 

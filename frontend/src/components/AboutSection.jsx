@@ -91,7 +91,7 @@ const AboutSection = ({ language }) => {
                     <div className="flex-shrink-0 w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center group-hover:bg-white/30 transition-colors">
                       <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
-                    <span className="text-lg leading-relaxed">{highlight}</span>
+                    <span className={`text-lg leading-relaxed ${index === 3 ? 'font-bold' : ''}`}>{highlight}</span>
                   </li>
                 ))}
               </ul>

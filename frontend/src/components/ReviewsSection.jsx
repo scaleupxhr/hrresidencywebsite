@@ -16,10 +16,10 @@ const ReviewsSection = ({ language }) => {
           >
             {language === 'en' ? 'Guest Reviews' : 'അതിഥി അവലോകനങ്ങൾ'}
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-2">
             {language === 'en'
-              ? 'Read what our guests say about their wonderful experience'
-              : 'അതിഥികൾ അവരുടെ അത്ഭുതകരമായ അനുഭവത്തെക്കുറിച്ച് പറയുന്നത് വായിക്കുക'}
+              ? 'Your comfort is our priority — see what our guests have to say'
+              : 'നിങ്ങളുടെ സുഖം ഞങ്ങളുടെ മുൻഗണനയാണ് — അതിഥികൾ പറയുന്നത് കാണുക'}
           </p>
           <div className="w-24 h-1 bg-teal-600 mx-auto mt-6"></div>
         </div>
