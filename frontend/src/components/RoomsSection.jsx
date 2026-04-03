@@ -56,18 +56,32 @@ const RoomCard = ({ room, language }) => {
 
           {/* Pricing */}
           <div className="pt-4 border-t border-slate-100 mt-auto">
-            <div className="flex items-end gap-3 mb-3">
-              <div className="flex items-start">
-                <IndianRupee className="h-6 w-6 text-slate-900 mt-0.5" />
-                <span className="text-4xl font-bold text-slate-900">{room.pricePerNight.toLocaleString('en-IN')}</span>
+            <div className="mb-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs bg-gradient-to-r from-red-500 to-red-600 text-white px-2.5 py-1 rounded-full font-bold uppercase tracking-wide">
+                  {language === 'en' ? 'Special Offer' : 'പ്രത്യേക ഓഫർ'}
+                </span>
+                <span className="text-xs bg-red-100 text-red-700 px-2.5 py-1 rounded-full font-semibold">
+                  {Math.round(((room.originalPrice - room.pricePerNight) / room.originalPrice) * 100)}% OFF
+                </span>
               </div>
-              <div className="flex items-start text-slate-400 line-through mb-2">
-                <IndianRupee className="h-4 w-4 mt-1" />
-                <span className="text-xl">{room.originalPrice.toLocaleString('en-IN')}</span>
+              
+              <div className="flex items-baseline gap-3">
+                <div className="flex items-start">
+                  <IndianRupee className="h-7 w-7 text-teal-700 mt-0.5 font-bold" />
+                  <span className="text-4xl font-bold text-teal-700">{room.pricePerNight.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-start text-slate-400 line-through">
+                    <span className="text-xs uppercase tracking-wide mr-1">MRP</span>
+                    <IndianRupee className="h-3.5 w-3.5 mt-0.5" />
+                    <span className="text-lg">{room.originalPrice.toLocaleString('en-IN')}</span>
+                  </div>
+                </div>
               </div>
             </div>
             <p className="text-sm text-slate-600 mb-5 font-medium">
-              {language === 'en' ? 'per night' : 'രാത്രിയിൽ'}
+              {language === 'en' ? 'per night (inclusive of taxes)' : 'രാത്രിയിൽ (നികുതി ഉൾപ്പെടെ)'}
             </p>
 
             <Button

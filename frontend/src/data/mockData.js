@@ -22,8 +22,8 @@ export const hotelInfo = {
 };
 
 export const highlights = {
-  en: ["Clean rooms", "Friendly staff", "Affordable rates", "Prime Location"],
-  ml: ["ശുദ്ധമായ മുറികൾ", "സൗഹൃദപരമായ സ്റ്റാഫ്", "താങ്ങാനാവുന്ന നിരക്കുകൾ", "പ്രധാന സ്ഥാനം"]
+  en: ["Clean rooms", "Friendly staff", "Affordable rates", "Prime Location", "24/7 Guest Service"],
+  ml: ["ശുദ്ധമായ മുറികൾ", "സൗഹൃദപരമായ സ്റ്റാഫ്", "താങ്ങാനാവുന്ന നിരക്കുകൾ", "പ്രധാന സ്ഥാനം", "24/7 അതിഥി സേവനം"]
 };
 
 export const roomTypes = [
@@ -36,8 +36,8 @@ export const roomTypes = [
       en: ["Air Conditioning", "Private Bathroom", "Work Desk", "Free Toiletries", "Hot Water", "TV"],
       ml: ["എയർ കണ്ടീഷനിംഗ്", "സ്വകാര്യ കുളിമുറി", "വർക്ക് ഡെസ്ക്", "സൗജന്യ ടോയ്‌ലട്രീസ്", "ചൂടുവെള്ളം", "ടിവി"]
     },
-    pricePerNight: 1499,
-    originalPrice: 1999
+    pricePerNight: 1400,
+    originalPrice: 1800
   },
   {
     id: 2,
@@ -48,8 +48,8 @@ export const roomTypes = [
       en: ["Ceiling Fan", "Private Bathroom", "Free Toiletries", "Hot Water", "Window View"],
       ml: ["സീലിംഗ് ഫാൻ", "സ്വകാര്യ കുളിമുറി", "സൗജന്യ ടോയ്‌ലട്രീസ്", "ചൂടുവെള്ളം", "വിൻഡോ വ്യൂ"]
     },
-    pricePerNight: 1229,
-    originalPrice: 1599
+    pricePerNight: 1100,
+    originalPrice: 1300
   },
   {
     id: 3,
@@ -60,8 +60,8 @@ export const roomTypes = [
       en: ["Ceiling Fan", "Private Bathroom", "Free Toiletries", "Hot Water", "Window View"],
       ml: ["സീലിംഗ് ഫാൻ", "സ്വകാര്യ കുളിമുറി", "സൗജന്യ ടോയ്‌ലട്രീസ്", "ചൂടുവെള്ളം", "വിൻഡോ വ്യൂ"]
     },
-    pricePerNight: 799,
-    originalPrice: 1099
+    pricePerNight: 1100,
+    originalPrice: 1300
   }
 ];
 

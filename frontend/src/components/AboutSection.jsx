@@ -22,10 +22,15 @@ const AboutSection = ({ language }) => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left: Info */}
             <div className="space-y-8">
-              <p className="text-lg text-slate-700 leading-relaxed">
+              <p className="text-lg text-slate-700 leading-relaxed italic" style={{ fontFamily: "'Playfair Display', serif" }}>
                 {language === 'en'
-                  ? 'Experience comfort and convenience in the heart of Kozhikode. HR Residency offers budget-friendly accommodation with modern amenities, perfect for both business and leisure travelers.'
-                  : 'കോഴിക്കോട്ടിന്റെ ഹൃദയഭാഗത്ത് സുഖവും സൗകര്യവും അനുഭവിക്കൂ. ബിസിനസ്സ്, വിനോദ സഞ്ചാരികൾക്ക് അനുയോജ്യമായ ആധുനിക സൗകര്യങ്ങളോടുകൂടിയ താങ്ങാനാവുന്ന താമസസൗകര്യം എച്ച്ആർ റെസിഡൻസി വാഗ്ദാനം ചെയ്യുന്നു.'}
+                  ? '"Experience comfort and convenience in the heart of Kozhikode"'
+                  : '"കോഴിക്കോട്ടിന്റെ ഹൃദയഭാഗത്ത് സുഖവും സൗകര്യവും അനുഭവിക്കൂ"'}
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                {language === 'en'
+                  ? 'HR Residency offers budget-friendly accommodation with modern amenities, perfect for both business and leisure travelers.'
+                  : 'ബിസിനസ്സ്, വിനോദ സഞ്ചാരികൾക്ക് അനുയോജ്യമായ ആധുനിക സൗകര്യങ്ങളോടുകൂടിയ താങ്ങാനാവുന്ന താമസസൗകര്യം എച്ച്ആർ റെസിഡൻസി വാഗ്ദാനം ചെയ്യുന്നു.'}
               </p>
 
               {/* Contact Info Cards */}
@@ -91,7 +96,7 @@ const AboutSection = ({ language }) => {
                     <div className="flex-shrink-0 w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center group-hover:bg-white/30 transition-colors">
                       <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
-                    <span className={`text-lg leading-relaxed ${index === 3 ? 'font-bold' : ''}`}>{highlight}</span>
+                    <span className={`text-lg leading-relaxed ${index === 3 || index === 4 ? 'font-bold' : ''}`}>{highlight}</span>
                   </li>
                 ))}
               </ul>
