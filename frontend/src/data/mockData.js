@@ -60,8 +60,8 @@ export const roomTypes = [
       en: ["Ceiling Fan", "Private Bathroom", "Free Toiletries", "Hot Water", "Window View"],
       ml: ["സീലിംഗ് ഫാൻ", "സ്വകാര്യ കുളിമുറി", "സൗജന്യ ടോയ്‌ലട്രീസ്", "ചൂടുവെള്ളം", "വിൻഡോ വ്യൂ"]
     },
-    pricePerNight: 1100,
-    originalPrice: 1300
+    pricePerNight: 799,
+    originalPrice: 999
   }
 ];
 
