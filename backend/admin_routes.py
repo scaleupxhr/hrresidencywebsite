@@ -41,7 +41,7 @@ async def get_rooms(request: Request, admin = Depends(get_current_admin)):
 async def create_room(room: RoomCreate, request: Request, admin = Depends(get_current_admin)):
     """Create a new room"""
     # Get next ID
-    last_room = await db.rooms.find_one(sort=[("id", -1)])
+    last_room = await db.rooms.find_one(sort=[("id", -1)], projection={"id": 1, "_id": 0})
     next_id = (last_room["id"] + 1) if last_room else 1
     
     room_dict = room.model_dump()
