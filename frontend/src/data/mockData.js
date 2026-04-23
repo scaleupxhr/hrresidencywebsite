@@ -13,7 +13,7 @@ export const hotelInfo = {
     ml: "മിനി ബൈപാസ് റോഡ്, എരഞ്ഞിപ്പലം, കോഴിക്കോട്, കേരളം 673006"
   },
   email: "info@hrresidency.com",
-  checkIn: "2:00 PM",
+  checkIn: "12:00 PM",
   checkOut: "11:00 AM",
   rating: 4.5,
   totalReviews: 107,
