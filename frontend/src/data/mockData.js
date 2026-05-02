@@ -120,8 +120,8 @@ export const nearbyAttractions = [
   {
     id: 6,
     name: { en: "Sarovaram Biopark", ml: "സരോവരം ബയോപാർക്ക്" },
-    distance: { en: "6.5 km", ml: "6.5 കി.മീ" },
-    time: { en: "16 mins by car", ml: "കാറിൽ 16 മിനിറ്റ്" },
+    distance: { en: "1.6 km", ml: "1.6 കി.മീ" },
+    time: { en: "4 mins by car", ml: "കാറിൽ 4 മിനിറ്റ്" },
     icon: "Trees",
     image: "https://images.pexels.com/photos/17034372/pexels-photo-17034372.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
