@@ -12,7 +12,7 @@ export const hotelInfo = {
     en: "Mini Bypass Rd, Eranhipalam, Kozhikode, Kerala 673006",
     ml: "മിനി ബൈപാസ് റോഡ്, എരഞ്ഞിപ്പലം, കോഴിക്കോട്, കേരളം 673006"
   },
-  email: "info@hrresidency.com",
+  email: "hrresidency99@gmail.com",
   checkIn: "12:00 PM",
   checkOut: "11:00 AM",
   rating: 4.5,
